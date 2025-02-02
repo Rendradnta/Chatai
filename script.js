@@ -48,7 +48,7 @@ function hideLoading(loadingElement) {
 
 // Fungsi untuk mengambil respons dari API
 async function getAIResponse(userMessage) {
-  const apiUrl = `https://fastrestapis.fasturl.cloud/aillm/gpt-4?ask=${encodeURIComponent(userMessage)}&style=Nama%20kamu%20adalah%20renal`;
+  const apiUrl = `https://fastrestapis.fasturl.cloud/aillm/gpt-4?ask=${encodeURIComponent(userMessage)}&style=Resa%20AI%20di%20sini!%20Dibuat%20oleh%20Renaldi%20(Renal)%20dan%20Maria%20Chelsa%20(Chelsa),%20pacarnya%20yang%20cantik,%20imut,%20lucu,%20dan%20cintanya%20Renal.%20Gw%20siap%20nemenin%20lu%20dengan%20bahasa%20gaul.%20Yuk,%20ngobrol!`;
 
   try {
     const response = await fetch(apiUrl);
