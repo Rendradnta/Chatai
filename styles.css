@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  width: 400px;
+  height: 90vh; /* Tinggi container 90% dari tinggi device */
+  max-height: 100%; /* Maksimal tinggi sesuai device */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+.chat-box {
+  flex: 1; /* Tinggi fleksibel, mengisi sisa ruang */
+  padding: 15px;
+  overflow-y: auto; /* Aktifkan scroll jika percakapan terlalu panjang */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Jarak antar pesan */
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+#send-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#send-btn:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  max-width: 80%; /* Lebar maksimal pesan */
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word; /* Pastikan teks tidak menembus chat box */
+}
+
+.user-message {
+  background-color: #007bff;
+  color: #fff;
+  align-self: flex-end; /* Pesan pengguna di sebelah kanan */
+}
+
+.ai-message {
+  background-color: #f1f1f1;
+  color: #333;
+  align-self: flex-start; /* Pesan AI di sebelah kiri */
+}
+
+.message strong {
+  font-weight: bold;
+}
+
+.message pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.message code {
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+
+.credit {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  align-self: flex-start;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #888;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-effect {
+  display: inline-block;
+  overflow: hidden;
+  white-space: pre-wrap; /* Biarkan teks multi-baris */
+  animation: typing 2s steps(40, end);
+}
